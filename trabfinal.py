@@ -52,6 +52,8 @@ if mode == "W" or mode == "w":
         cv2.imshow('Emotion Detection (Press q to quit)', resized_img)
     
         if cv2.waitKey(10) == ord('q'):  # Espera ate a tecla Q ser pressionada
+            cap.release()
+            cv2.destroyAllWindows
             break
 elif mode == "i" or mode == "I":    
    #Input image
@@ -65,15 +67,18 @@ elif mode == "i" or mode == "I":
     emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
     predicted_emotion = emotions[pred]
     
-    print(f" A emocao da imagem e de {predicted_emotion}")
+    #print(f" A emocao da imagem e de {predicted_emotion}")
     
     #Interface do OpenCV
+    cv2.putText(input_arr[0], predicted_emotion, ((int(image.shape[1]/2), 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2))
     cv2.imshow('Emotion Detection',input_arr[0])
+    cv2.waitKey(10) == ord('q')  # Espera ate a tecla Q ser pressionada
+    cv2.destroyAllWindows
+
+"""    
     #Interface do Matplotlib
     plt.imshow(input_arr[0])
     plt.title("Emotion Detection")
     plt.show()
-   
+"""   
 
-cap.release()
-cv2.destroyAllWindows
