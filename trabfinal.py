@@ -59,8 +59,10 @@ input_arr = np.array([i])
 input_arr.shape
 
 pred = np.argmax(model.predict(input_arr))
+emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
+predicted_emotion = emotions[pred]
 
-print(f" A emocao da imagem e de {op[pred]}")
+print(f" A emocao da imagem e de {predicted_emotion}")
 
 #Interface do OpenCV
 cv2.imshow('Emotion Detection',input_arr[0])
