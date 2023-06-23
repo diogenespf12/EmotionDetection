@@ -58,6 +58,8 @@ i = img_to_array(img)/255
 input_arr = np.array([i])
 input_arr.shape
 
+op = dict(zip( train_data.class_indices.values(), train_data.class_indices.keys()))
+
 pred = np.argmax(model.predict(input_arr))
 
 print(f" A emocao da imagem e de {op[pred]}")
