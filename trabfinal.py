@@ -66,19 +66,9 @@ elif mode == "i" or mode == "I":
     pred = np.argmax(model.predict(input_arr))
     emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
     predicted_emotion = emotions[pred]
-    
-    #print(f" A emocao da imagem e de {predicted_emotion}")
-    
-    #Interface do OpenCV
-    cv2.putText(input_arr[0], f"Emocao: {predicted_emotion}" , ((10,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2))
-    cv2.imshow('Emotion Detection',input_arr[0])
-    cv2.waitKey(10) == ord('q')  # Espera ate a tecla Q ser pressionada
-    cv2.destroyAllWindows
-
-"""    
+          
     #Interface do Matplotlib
     plt.imshow(input_arr[0])
-    plt.title("Emotion Detection")
+    plt.title(f" A emocao da imagem e de {predicted_emotion}")
     plt.show()
-"""   
-
+    
