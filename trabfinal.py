@@ -70,7 +70,7 @@ elif mode == "i" or mode == "I":
     #print(f" A emocao da imagem e de {predicted_emotion}")
     
     #Interface do OpenCV
-    cv2.putText(input_arr[0], predicted_emotion, ((int(image.shape[1]/2), 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2))
+    cv2.putText(input_arr[0], f"Emocao: {predicted_emotion}" , ((int(image.shape[1]/2), 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2))
     cv2.imshow('Emotion Detection',input_arr[0])
     cv2.waitKey(10) == ord('q')  # Espera ate a tecla Q ser pressionada
     cv2.destroyAllWindows
